@@ -12,7 +12,7 @@ export const ProductList = () => {
 
     return(
         <>
-        <h2>Our products</h2>
+        <h2>Our Products</h2>
         {products.map((productObj) => {
             return  <p key={`product--${productObj.id}`}>
                         {productObj.name}, <strong>${productObj.price.toFixed(2)}</strong> <i>{productObj.typeId}</i>

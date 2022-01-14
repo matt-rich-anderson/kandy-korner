@@ -1,13 +1,13 @@
 import React from "react";
-import { LocationsList } from "./locations/LocationsList";
-import { ProductList } from "./Products/ProductList";
+import { ApplicationViews } from "./ApplicationViews";
+import { NavBar } from "./navbar/NavBar";
 
 export const KandyKorner = () => {
     return (
         <>
+        <NavBar />
         <h1>Kandy Korner</h1>
-        <LocationsList />
-        <ProductList />
+        <ApplicationViews />
         </>
     )
 }
