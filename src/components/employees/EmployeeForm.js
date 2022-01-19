@@ -62,9 +62,25 @@ export const EmployeeForm = () => {
                             const copyState = {...employee}
                             copyState.locationId = parseInt(evt.target.value)
                             updateEmployee(copyState)
+                            }}>
+                        <option>Select an Address</option>       
+                        {locations.map((location) => { return <option value={location.id}>{location.address}</option>})}
+                        </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="name">Will this Employee be a Manager?</label>
+                    <select name="manager" id="manager"
+                        onChange={(evt) => {
+                            const copyState = {...employee}
+                            copyState.locationId = parseInt(evt.target.value)
+                            updateEmployee(copyState)
                             }}
                         >
-                        {locations.map((location) => { return <option value={location.id}>{location.address}</option>})}
+                            <option>Select an Option</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
                         </select>
                 </div>
             </fieldset>
