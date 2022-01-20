@@ -56,7 +56,7 @@ export const EmployeeForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Select Location:</label>
+                    <label htmlFor="location">Select Location:</label>
                     <select name="locations" id="locations"
                         onChange={(evt) => {
                             const copyState = {...employee}
@@ -70,11 +70,33 @@ export const EmployeeForm = () => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Will this Employee be a Manager?</label>
+                    <label htmlFor="manager">Will this Employee be a Manager?</label>
                     <select name="manager" id="manager"
                         onChange={(evt) => {
                             const copyState = {...employee}
-                            copyState.locationId = parseInt(evt.target.value)
+                            if (evt.target.value === "true"){
+                                copyState.manager = true
+                            }
+                            else {copyState.manager = false}
+                            updateEmployee(copyState)
+                            }}
+                        >
+                            <option>Select an Option</option>
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <div className="form-group">
+                    <label htmlFor="fulltime">Will this Employee be Fulltime?</label>
+                    <select name="fulltime" id="fulltime"
+                        onChange={(evt) => {
+                            const copyState = {...employee}
+                            if (evt.target.value === "true"){
+                                copyState.fulltime = true
+                            }
+                            else {copyState.fulltime = false}
                             updateEmployee(copyState)
                             }}
                         >
